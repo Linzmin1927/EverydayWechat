@@ -149,9 +149,9 @@ def text_reply(msg):
             nickName = FILEHELPER if uuid == FILEHELPER else msg.user.nickName
             print('\n{}发来信息：{}'.format(nickName, receive_text))
             reply_text = get_bot_info(receive_text, uuid)  # 获取自动回复
-            time.sleep(1)  # 休眠一秒，保安全。想更快的，可以直接注释。
+            #time.sleep(1)  # 休眠一秒，保安全。想更快的，可以直接注释。
             if reply_text:  # 如内容不为空，回复消息
-                reply_text = reply_text if not uuid == FILEHELPER else '机器人回复：' + reply_text
+                reply_text = reply_text if not uuid == FILEHELPER else '蠢蠢的机器人回复：' + reply_text
                 itchat.send(reply_text, toUserName=uuid)
                 print('回复{}：{}\n'.format(nickName, reply_text))
             else:
